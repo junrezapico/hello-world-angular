@@ -16,7 +16,12 @@ export class TextinputComponent implements OnInit {
   onMyClickMe = (ev: MouseEvent) => {
     console.log('MOUSE CLICKED', ev);
     // this.clickMessage = 'MOUSE CLICKED';
-    this.todoService.insertTodo(this.clickMessage);
+    // this.todoService.insertTodo(this.clickMessage);
+
+    this.todoService.insertTodo(this.clickMessage).subscribe((hero) => {
+      // this.heroes.push(hero);
+      console.log('MANA AY');
+    });
   };
 
   onMyMouseOver = (ev: MouseEvent) => {
