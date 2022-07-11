@@ -1,2 +1,2 @@
-<input type="text" />
-<button>CLICK ME!</button>
+<input type="text" value="{{clickMessage}}" (keyup)="onChangeKey($event)" />
+<button (mousedown)="onMyClickMe($event)" (mouseover)="onMyMouseOver($event)">CLICK ME!</button>
