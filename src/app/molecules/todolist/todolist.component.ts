@@ -26,11 +26,11 @@ export class TodolistComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   fetchTodos(): void {
-    this.todoList = this.todoService.getTodos();
+    // this.todoList = this.todoService.getTodos();
 
-    // this.todoService
-    //   .getTodos()
-    //   .subscribe((todoList) => (this.todoList = todoList));
+    this.todoService
+      .getTodos()
+      .subscribe((todoList) => (this.todoList = todoList));
   }
 
   ngOnInit(): void {

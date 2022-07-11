@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Todo } from '../molecules/todolist/types';
 
 @Injectable({
@@ -21,9 +22,14 @@ export class TodoService {
   ];
 
   constructor() {}
-  getTodos = (): Todo[] => {
-    return this.todoList;
-  };
+  // getTodos = (): Todo[] => {
+  //   return this.todoList;
+  // };
+  getTodos(): Observable<Todo[]> {
+    const todoList = of(this.todoList);
+    console.log('ifetch daw');
+    return todoList;
+  }
 
   insertTodo = (todo: string): void => {
     this.todoList.push({ id: this.todoList.length, todo });
