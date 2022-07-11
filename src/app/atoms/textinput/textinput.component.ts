@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-textinput',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class TextinputComponent implements OnInit {
   clickMessage = '';
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}
 
   onMyClickMe = (ev: MouseEvent) => {
     console.log('MOUSE CLICKED', ev);
-    this.clickMessage = 'MOUSE CLICKED';
+    // this.clickMessage = 'MOUSE CLICKED';
+    this.todoService.insertTodo(this.clickMessage);
   };
 
   onMyMouseOver = (ev: MouseEvent) => {
