@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-counter-card',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter-card.component.scss'],
 })
 export class CounterCardComponent implements OnInit {
-  count = 0;
+  counterCount$: Observable<number>;
 
-  constructor() {}
+  constructor(private store: Store<{ count: number }>) {
+    this.counterCount$ = store.pipe(select('count'));
+  }
+
 
   ngOnInit(): void {}
 }
