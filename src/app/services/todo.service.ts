@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Store, select } from '@ngrx/store';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Todo } from '../molecules/todolist/types';
+import { Increment, Decrement, Reset } from '../store/counter/actions';
+
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +27,10 @@ export class TodoService {
     //   todo: 'Service Todo 3',
     // },
   ];
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private store: Store<{ count: number }>
+  ) {}
   // getTodos = (): Todo[] => {
   //   return this.todoList;
   // };
@@ -51,6 +57,7 @@ export class TodoService {
   // };
   insertTodo(todo: string): Observable<Todo> {
     console.log('HOY', todo);
+    this.store.dispatch(new Increment());
 
     return this.http
       .post<Todo>('https://jsonplaceholder.typicode.com/todos', todo, {})
