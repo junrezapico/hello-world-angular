@@ -10,10 +10,24 @@ import { TextinputComponent } from './atoms/textinput/textinput.component';
 import { TodolistComponent } from './molecules/todolist/todolist.component';
 import { CounterFormComponent } from './molecules/counter-form/counter-form.component';
 import { CounterCardComponent } from './molecules/counter-card/counter-card.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/counter/reducer';
 
 @NgModule({
-  declarations: [AppComponent, TextinputComponent, TodolistComponent, CounterFormComponent, CounterCardComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    TextinputComponent,
+    TodolistComponent,
+    CounterFormComponent,
+    CounterCardComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    StoreModule.forRoot({ count: counterReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

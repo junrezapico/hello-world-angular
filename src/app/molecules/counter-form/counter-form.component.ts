@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Increment, Decrement, Reset } from '../../store/counter/actions';
 
 @Component({
   selector: 'app-counter-form',
@@ -6,15 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter-form.component.scss'],
 })
 export class CounterFormComponent implements OnInit {
-  constructor() {}
+  count$: Observable<number>;
+  constructor(private store: Store<{ count: number }>) {
+    this.count$ = store.pipe(select('count'));
+  }
 
   ngOnInit(): void {}
 
   onClickIncrement = () => {
-    alert('increment');
+    this.store.dispatch(new Increment());
   };
 
   onClickDecrement = () => {
-    alert('decrement');
+    this.store.dispatch(new Decrement());
+  };
+
+  onClickReset = () => {
+    this.store.dispatch(new Reset());
   };
 }
