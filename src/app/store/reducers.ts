@@ -8,7 +8,7 @@ import {
   initialState as counterInitialState,
 } from './counter/reducer';
 
-type AppState = {
+export type AppState = {
   auth: typeof authInitialState;
   count: typeof counterInitialState;
 };
