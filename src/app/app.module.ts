@@ -12,6 +12,8 @@ import { CounterFormComponent } from './molecules/counter-form/counter-form.comp
 import { CounterCardComponent } from './molecules/counter-card/counter-card.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/counter/reducer';
+import { LoginComponent } from './pages/login/login.component';
+import { TodoComponent } from './pages/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { counterReducer } from './store/counter/reducer';
     TodolistComponent,
     CounterFormComponent,
     CounterCardComponent,
+    LoginComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
