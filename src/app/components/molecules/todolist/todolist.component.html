@@ -1,0 +1,22 @@
+<h2>My TODO List</h2>
+<ul class="heroes">
+  <li *ngFor="let todo of todoList">
+    <button 
+    [class.selected]="todo === selectedTodo"
+    type="button" 
+    (click)="onSelect(todo)"
+    >
+      <span class="badge">{{todo.id}}</span>
+      <span class="name">{{todo.todo}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedTodo">
+  <h2>{{selectedTodo.todo | uppercase}} Details</h2>
+  <div>id: {{selectedTodo.id}}</div>
+  <div>
+    <label for="hero-name">Todo name: </label>
+    <input id="hero-name" [(ngModel)]="selectedTodo.todo" placeholder="name">
+  </div>
+</div>
