@@ -7,6 +7,7 @@ export const reducer = (
   state = initialState,
   action: Action
 ): typeof initialState => {
+  console.log('ANG COUNT', state);
   switch (action.type) {
     case ActionTypes.INCREMENT:
       return state + 1;

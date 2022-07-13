@@ -8,12 +8,10 @@ import {
   initialState as counterInitialState,
 } from './counter/reducer';
 
-export const rootReducer = {};
-
-export interface AppState {
+type AppState = {
   auth: typeof authInitialState;
   count: typeof counterInitialState;
-}
+};
 
 export const reducers: ActionReducerMap<AppState, any> = {
   auth: authReducer,
