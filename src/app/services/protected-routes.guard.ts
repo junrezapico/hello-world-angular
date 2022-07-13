@@ -13,7 +13,7 @@ import { AppState } from '../store/reducers';
 @Injectable({
   providedIn: 'root',
 })
-export class RoutesAuthGuard implements CanActivate {
+export class ProtectedRoutesGuard implements CanActivate {
   constructor(private store: Store<AppState>, private route: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,

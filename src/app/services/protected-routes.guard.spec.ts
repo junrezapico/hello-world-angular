@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RoutesAuthGuard } from './routes-auth.guard';
+import { ProtectedRoutesGuard } from './protected-routes.guard';
 
-describe('RoutesAuthGuard', () => {
-  let guard: RoutesAuthGuard;
+describe('ProtectedRoutesGuard', () => {
+  let guard: ProtectedRoutesGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(RoutesAuthGuard);
+    guard = TestBed.inject(ProtectedRoutesGuard);
   });
 
   it('should be created', () => {
