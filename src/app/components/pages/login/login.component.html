@@ -1,4 +1,6 @@
-<p>LOGIN PAGE</p>
-<input (keyup)="onChangeKey('email',$event)" type="text" value="{{email}}" placeholder="username" />
-<input (keyup)="onChangeKey('password',$event)" type="password" value="{{password}}" placeholder="password" />
-<button (click)="handleSubmit()">SUBMIT</button>
+<form>
+    <p>LOGIN PAGE</p>
+    <input (keyup)="onChangeKey('email',$event)" type="text" value="{{email}}" placeholder="username" />
+    <input (keyup)="onChangeKey('password',$event)" type="password" value="{{password}}" placeholder="password" />
+    <button (click)="handleSubmit()">SUBMIT</button>
+</form>

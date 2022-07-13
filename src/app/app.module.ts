@@ -11,10 +11,9 @@ import { TodolistComponent } from './components/molecules/todolist/todolist.comp
 import { CounterFormComponent } from './components/molecules/counter-form/counter-form.component';
 import { CounterCardComponent } from './components/molecules/counter-card/counter-card.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './store/counter/reducer';
 import { LoginComponent } from './components/pages/login/login.component';
 import { TodoComponent } from './components/pages/todo/todo.component';
-
+import { reducers } from './store/reducers';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +29,7 @@ import { TodoComponent } from './components/pages/todo/todo.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot(reducers),
   ],
   providers: [],
   bootstrap: [AppComponent],

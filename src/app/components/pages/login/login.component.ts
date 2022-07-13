@@ -25,5 +25,6 @@ export class LoginComponent implements OnInit {
     }
     // this.router.navigate(['todo']);
     this.router.navigateByUrl('todo');
+    
   };
 }

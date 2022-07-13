@@ -1,20 +1,23 @@
 import { Action } from '@ngrx/store';
 import { ActionTypes } from './actions';
 
-export const initialState = 0;
+export const initialState: number = 0;
 
-export function counterReducer(state = initialState, action: Action) {
+export const reducer = (
+  state = initialState,
+  action: Action
+): typeof initialState => {
   switch (action.type) {
-    case ActionTypes.Increment:
+    case ActionTypes.INCREMENT:
       return state + 1;
 
-    case ActionTypes.Decrement:
+    case ActionTypes.DECREMENT:
       return state - 1;
 
-    case ActionTypes.Reset:
+    case ActionTypes.RESET:
       return 0;
 
     default:
       return state;
   }
-}
+};
