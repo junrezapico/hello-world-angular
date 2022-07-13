@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Todo } from './molecules/todolist/types';
+import { Todo } from './components/molecules/todolist/types';
 
 @Injectable({
   providedIn: 'root',

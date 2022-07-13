@@ -6,14 +6,14 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TextinputComponent } from './atoms/textinput/textinput.component';
-import { TodolistComponent } from './molecules/todolist/todolist.component';
-import { CounterFormComponent } from './molecules/counter-form/counter-form.component';
-import { CounterCardComponent } from './molecules/counter-card/counter-card.component';
+import { TextinputComponent } from './components/atoms/textinput/textinput.component';
+import { TodolistComponent } from './components/molecules/todolist/todolist.component';
+import { CounterFormComponent } from './components/molecules/counter-form/counter-form.component';
+import { CounterCardComponent } from './components/molecules/counter-card/counter-card.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/counter/reducer';
-import { LoginComponent } from './pages/login/login.component';
-import { TodoComponent } from './pages/todo/todo.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { TodoComponent } from './components/pages/todo/todo.component';
 
 @NgModule({
   declarations: [

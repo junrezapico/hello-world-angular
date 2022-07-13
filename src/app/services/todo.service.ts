@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Todo } from '../molecules/todolist/types';
+import { Todo } from '../components/molecules/todolist/types';
 import { Increment, Decrement, Reset } from '../store/counter/actions';
 
 
