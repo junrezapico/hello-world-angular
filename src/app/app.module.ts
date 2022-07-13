@@ -15,6 +15,7 @@ import { CounterCardComponent } from './components/molecules/counter-card/counte
 import { LoginComponent } from './components/pages/login/login.component';
 import { TodoComponent } from './components/pages/todo/todo.component';
 import { reducers } from './store/reducers';
+import { RegistrationComponent } from './components/pages/registration/registration.component';
 
 const localStorageSyncReducer = (
   reducer: ActionReducer<any>
@@ -47,6 +48,7 @@ const localStorageSyncReducer = (
     CounterCardComponent,
     LoginComponent,
     TodoComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
