@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
@@ -13,7 +14,7 @@ import { AppState } from '../store/reducers';
   providedIn: 'root',
 })
 export class RoutesAuthGuard implements CanActivate {
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private route: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -28,19 +29,12 @@ export class RoutesAuthGuard implements CanActivate {
       })
       .pipe(
         map((authState) => {
-          console.log('testtt', authState);
-          return true;
+          const isLoggedIn = !!authState?.uid;
+          if (!isLoggedIn) {
+            this.route.navigateByUrl('/login');
+          }
+          return isLoggedIn;
         })
       );
-    console.log('hahahazz', state.url);
-    /*
-    this.store.select(testCount).pipe(
-      map((test) => {
-        console.log('testtt', test);
-      })
-    );
-    console.log('hahahazz', state.url);
-    return true;
-    */
   }
 }

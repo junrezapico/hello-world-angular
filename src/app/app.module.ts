@@ -22,10 +22,14 @@ const localStorageSyncReducer = (
   return localStorageSync({
     keys: [
       {
-        count: {
-          deserialize: (state) => {
-            return JSON.parse(state);
-          },
+        auth: {
+          // NOTE: use this function when we have to map and override serialization
+          // deserialize: (state) => {
+          //   try {
+          //   return JSON.parse(state);
+          //   } catch {}
+          //   return {};
+          // },
         },
       },
     ],

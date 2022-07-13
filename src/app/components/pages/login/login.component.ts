@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   email = '';
   password = '';
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -19,12 +20,12 @@ export class LoginComponent implements OnInit {
   };
 
   handleSubmit = (): void => {
-    if(!this.email || !this.password){
+    if (!this.email || !this.password) {
       alert('missing fields');
       return;
     }
+    this.authService.signIn();
     // this.router.navigate(['todo']);
-    this.router.navigateByUrl('todo');
-    
+    // this.router.navigateByUrl('todo');
   };
 }

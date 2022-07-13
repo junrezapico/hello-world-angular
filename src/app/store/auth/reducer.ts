@@ -15,7 +15,10 @@ export const reducer = (
         ...state,
         uid: action.payload.uid,
       };
-
+    case ActionTypes.SIGN_OUT:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }
