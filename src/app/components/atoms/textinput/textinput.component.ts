@@ -14,24 +14,20 @@ export class TextinputComponent implements OnInit {
   ngOnInit(): void {}
 
   onMyClickMe = (ev: MouseEvent) => {
-    console.log('MOUSE CLICKED', ev);
     // this.clickMessage = 'MOUSE CLICKED';
     // this.todoService.insertTodo(this.clickMessage);
 
     this.todoService.insertTodo(this.clickMessage).subscribe((hero) => {
       // this.heroes.push(hero);
-      console.log('MANA AY');
     });
   };
 
   onMyMouseOver = (ev: MouseEvent) => {
-    console.log('MOUSE OVERED', ev);
     this.clickMessage = 'MOUSE OVERED';
   };
 
   onChangeKey = (ev: Event) => {
     if (!(ev.target instanceof HTMLInputElement)) return;
-    console.log('CHANGED', ev.target.value);
     this.clickMessage = `${ev.target.value}`;
   };
 }
